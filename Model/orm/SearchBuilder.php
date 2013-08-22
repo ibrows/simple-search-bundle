@@ -61,7 +61,7 @@ class SearchBuilder extends BaseSearchBuilder
         $searchField = $this->getSearchField($form);
         $searchCondition = $this->getSearchCondition($form);
         $searchValue = $this->getSearchValue($form);
-        $variable = $form->getName().'_value';
+        $variable = $alias.'_'.$form->getName().'_value';
         
         if ($searchCondition == 'IN' && $searchValue instanceof Collection) {
             //TODO: find a better solution to transform collection
@@ -73,7 +73,7 @@ class SearchBuilder extends BaseSearchBuilder
             if (count($ids) > 0) {
                 $qb->andWhere("{$alias}.{$searchField} $searchCondition (:{$variable})")->setParameter($variable, $ids);
             } else {
-                $qb->andWhere("{$alias}.{$searchField} $searchCondition (:{$variable})")->setParameter($variable, implode(',', $ids));
+                $qb->andWhere("1 = 2");
             }
         } else {
             $qb->andWhere("{$alias}.{$searchField} $searchCondition :{$variable}")->setParameter($variable, $searchValue);
