@@ -2,6 +2,7 @@
 
 namespace Ibrows\SimpleSearchBundle\Model;
 
+use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Query\QueryBuilder;
 
 use Symfony\Component\Form\FormInterface;
@@ -17,6 +18,9 @@ abstract class BaseSearchBuilder
         }
         if ($value === false) {
             return true;
+        }
+        if ($value instanceof Collection) {
+            return $value->isEmpty();
         }
         
         return false;

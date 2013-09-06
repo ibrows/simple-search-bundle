@@ -75,7 +75,7 @@ class SearchBuilder extends BaseSearchBuilder
             } else {
                 $qb->andWhere("1 = 2");
             }
-        } else {
+        } elseif ($searchValue) {
             $qb->andWhere("{$alias}.{$searchField} $searchCondition :{$variable}")->setParameter($variable, $searchValue);
         }
         
