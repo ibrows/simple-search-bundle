@@ -13,7 +13,8 @@ class SearchableFieldTypeExtension extends AbstractTypeExtension
     {
         $resolver->setDefaults(array(
                 'search_field' => 'id',
-                'search_condition' => '='
+                'search_condition' => '=',
+                'search_method' => false
         ));
         $resolver->setOptional(array(
                 'search_class',

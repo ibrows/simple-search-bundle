@@ -26,6 +26,11 @@ abstract class BaseSearchBuilder
         return false;
     }
     
+    public function getSearchMethod(FormInterface $form)
+    {
+        return $form->getConfig()->getOption('search_method');
+    }
+    
     public function getSearchClass(FormInterface $form)
     {
         return $form->getConfig()->getOption('search_class');

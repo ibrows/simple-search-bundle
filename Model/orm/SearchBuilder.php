@@ -58,6 +58,13 @@ class SearchBuilder extends BaseSearchBuilder
             return $qb;
         }
         
+        $searchMethod = $this->getSearchMethod($form);
+        if ($searchMethod) {
+            $repo = $this->registry->getManagerForClass($searchClass)->getRepository($searchClass);
+            $repo->$searchMethod($qb, $alias, $form, $this);
+            return $qb;
+        }
+        
         $searchField = $this->getSearchField($form);
         $searchCondition = $this->getSearchCondition($form);
         $searchValue = $this->getSearchValue($form);
