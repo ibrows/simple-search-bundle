@@ -3,7 +3,6 @@
 namespace Ibrows\SimpleSearchBundle\Model;
 
 use Doctrine\Common\Collections\Collection;
-use Doctrine\DBAL\Query\QueryBuilder;
 
 use Symfony\Component\Form\FormInterface;
 
