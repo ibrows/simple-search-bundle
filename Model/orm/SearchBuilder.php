@@ -27,12 +27,12 @@ class SearchBuilder extends BaseSearchBuilder
     
     /**
      * @param FormInterface $form
-     * @return \Doctrine\ORM\QueryBuilder
+     * @return QueryBuilder
      */
     public function getQueryBuilder(FormInterface $form, $className, $alias = 'o')
     {
-        /* @var $qb \Doctrine\ORM\QueryBuilder */
-        $qb = $this->registry->getManagerForClass($className)->createQueryBuilder();
+        /* @var $qb QueryBuilder */
+        $qb = $this->registry->getEntityManagerForClass($className)->createQueryBuilder();
         $qb
             ->select($alias)
             ->from($className, $alias)
