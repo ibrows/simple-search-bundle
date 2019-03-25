@@ -15,6 +15,5 @@
         "psr-4": {
             "Ibrows\\SimpleSearchBundle\\": "./"
         }
-    },
-    "target-dir": "Ibrows/SimpleSearchBundle"
+    }
 }
