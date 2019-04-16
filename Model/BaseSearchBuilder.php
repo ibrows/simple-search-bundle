@@ -3,12 +3,14 @@
 namespace Ibrows\SimpleSearchBundle\Model;
 
 use Doctrine\Common\Collections\Collection;
-
 use Symfony\Component\Form\FormInterface;
 
+/**
+ * Class BaseSearchBuilder
+ * @package Ibrows\SimpleSearchBundle\Model
+ */
 abstract class BaseSearchBuilder
 {
-
     public function hasEmtpyData(FormInterface $form)
     {
         $value = $form->getData();

@@ -1,12 +1,13 @@
-<?xml version="1.0" ?>
+<?xml version="1.0" encoding="UTF-8" ?>
 
 <container xmlns="http://symfony.com/schema/dic/services"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+    xsi:schemaLocation="http://symfony.com/schema/dic/services
+	    https://symfony.com/schema/dic/services/services-1.0.xsd">
     
     <services>
-    		<service id="ibrows_simple_search.form.type.extension.search" class="Ibrows\SimpleSearchBundle\Form\Extension\SearchableFieldTypeExtension">
-		    <tag name="form.type_extension" alias="form" />
+		<service id="Ibrows\SimpleSearchBundle\Form\Extension\SearchableFieldTypeExtension" public="true">
+			<tag name="form.type_extension" alias="form" extended-type="Symfony\Component\Form\Extension\Core\Type\ChoiceType"/>
 		</service>
     </services>
 </container>

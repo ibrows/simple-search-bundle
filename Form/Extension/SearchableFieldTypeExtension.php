@@ -3,6 +3,7 @@
 namespace Ibrows\SimpleSearchBundle\Form\Extension;
 
 use Symfony\Component\Form\AbstractTypeExtension;
+use Symfony\Component\Form\Extension\Core\Type\FormType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
 class SearchableFieldTypeExtension extends AbstractTypeExtension
@@ -14,12 +15,19 @@ class SearchableFieldTypeExtension extends AbstractTypeExtension
             'search_condition' => '=',
             'search_method' => false,
         ]);
+
         $resolver->setDefined([
             'search_class',
         ]);
     }
     
-    public function getExtendedType() {
-        return 'form';
+    public function getExtendedType()
+    {
+        return FormType::class;
+    }
+
+    public static function getExtendedTypes()
+    {
+        return [FormType::class];
     }
 }
