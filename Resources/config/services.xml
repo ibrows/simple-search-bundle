@@ -7,7 +7,7 @@
     
     <services>
 		<service id="Ibrows\SimpleSearchBundle\Form\Extension\SearchableFieldTypeExtension" public="true">
-			<tag name="form.type_extension" alias="form" extended-type="Symfony\Component\Form\Extension\Core\Type\ChoiceType"/>
+			<tag name="form.type_extension" alias="form" extended-type="Symfony\Component\Form\Extension\Core\Type\FormType"/>
 		</service>
     </services>
 </container>
